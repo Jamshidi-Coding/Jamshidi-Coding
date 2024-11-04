@@ -25,7 +25,8 @@
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
 
-![Snake animation](https://github.com/Jamshidi-Coding/Jamshidi-Coding/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/Jamshidi-Coding/Jamshidi-Coding/blob/main/dist/snake.svg)
+
 
 
 
