@@ -1,0 +1,24 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # هر روز در نیمه شب اجرا می‌شود
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: Platane/snk@master
+        with:
+          github_user_name: "Jamshidi-Coding"
+          outputs: dist/snake.svg  # نام خروجی باید به "outputs" تغییر کند
+
+      - name: Push Snake
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main  # یا master (بسته به نام شاخه اصلی شما)
+          file: dist/snake.svg
