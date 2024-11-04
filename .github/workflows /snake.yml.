@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # اجرا در نیمه شب هر روز
+    - cron: "0 0 * * *"  # هر روز در نیمه شب اجرا می‌شود
   workflow_dispatch:
 
 jobs:
@@ -10,24 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3  # استفاده از نسخه به‌روزتر checkout
-
-      - name: Generate snake animation
-        uses: Platane/snk@master
+      - uses: actions/checkout@v2
+      
+      - uses: Platane/snk@master
         with:
           github_user_name: "Jamshidi-Coding"
-          output: dist/snake.svg  # فایل خروجی
+          outputs: dist/snake.svg  # نام خروجی باید به "outputs" تغییر کند
 
-      - name: Create output directory
-        run: mkdir -p dist  # ایجاد پوشه خروجی در صورت نیاز
-
-      - name: Move snake.svg to output
-        run: mv dist/snake.svg .github/snake.svg  # انتقال فایل به مکان مناسب در پوشه .github
-
-      - name: Push Snake to repository
+      - name: Push Snake
         uses: ad-m/github-push-action@master
         with:
-          branch: main  # ذخیره‌ی خروجی در شاخه اصلی
-          force: true  # جایگزینی فایل در صورت موجود بودن
-          file: .github/snake.svg  # نام فایل خروجی
+          branch: main  # یا master (بسته به نام شاخه اصلی شما)
+          file: dist/snake.svg
