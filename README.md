@@ -23,3 +23,6 @@
 [![](https://visitcount.itsvg.in/api?id=Jamshidi-Coding&icon=10&color=13)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+
+![Snake animation](https://github.com/Jamshidi-Coding/Jamshidi-Coding/blob/output/github-contribution-grid-snake.svg)
